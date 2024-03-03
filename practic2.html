@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto-Switching Left-to-Right Slider</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Google Sans', sans-serif, system-ui;
+      overflow: hidden;
+    }
+
+    .container-fluid {
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 1s ease-in-out; /* Adjust the duration as needed */
+    }
+
+    .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+
+    img {
+        border: 2px solid black;
+      width: 30%;
+      height: auto;
+      display: block;
+    }
+
+    /* Add more styles for additional slides as needed */
+  </style>
+</head>
+<body>
+
+  <div class="container-fluid">
+    <div class="slider" id="slider">
+      <div class="slide">1<img src="../Ritik/audi.png" alt="Slide 1"></div>
+      <div class="slide">2<img src="../Ritik/audi.png" alt="Slide 2"></div>
+      <div class="slide">3<img src="../Ritik/audi.png" alt="Slide 3"></div>
+      <!-- Add more slides with images -->
+    </div>
+  </div>
+
+  <script>
+    const slider = document.getElementById('slider');
+
+    function nextSlide() {
+      const firstSlide = slider.firstElementChild;
+      slider.style.transition = 'transform 0.8s ease-in-out';
+      slider.style.transform = 'translateX(-100%)';
+
+      setTimeout(() => {
+        slider.appendChild(firstSlide);
+        slider.style.transition = 'none';
+        slider.style.transform = 'translateX(0)';
+      }, 1000);
+    }
+
+    setInterval(nextSlide, 1500); // Adjust the interval (in milliseconds) for auto-switching
+  </script>
+
+</body>
+</html>
