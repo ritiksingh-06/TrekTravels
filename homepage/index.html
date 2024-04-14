@@ -10,114 +10,41 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="slider.css">
+    <link rel="stylesheet" href="glowing&movingbtn.css">
     <style>
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
+        .bgvdo{
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          z-index: -1;
+          object-fit: cover;
         }
-        
-        body {
-            /* background: linear-gradient(to top right, rgba(0, 0, 0, 0.863),#2b0909, black); */
-            background-color: #192734;
-            background-size: cover;
-        }
-        .dropdown-menu{
-          width: 100px;
-          margin-left: 50px;
-        }
-        .navbar-brand{
-          font-size: 30px;
-          font-family: 'Protest Riot', sans-serif;
-          letter-spacing: 1px;
-        } 
-
-
-        body{
-            min-height: 100vh;
-            display: grid;
-            place-items: center;
-            overflow: hidden;
-        }
-        .slider{
-            height: 350px;
-            margin: auto;
-            position: relative;
+        @media(min-aspect-ratio: 16/9){
+          .bgvdo{
             width: 100%;
-            display: grid;
-            place-items: center;
-            overflow: hidden;
-            margin-top: 150px;
+            height: auto;
+          }
         }
-        .slide-track{
-            display: flex;
-            width: calc(350px * 20);
-            animation: scroll 30s linear infinite;
-        }
-        .slide-track:hover{
-            animation-play-state: paused;
-        }
-        @keyframes scroll{
-            0% {
-                transform: translateX(0);
-            }
-            100%{
-                transform: translateX(calc(-350px * 10));
-            }
-        }
-        .slide{
-            height: 350px;
-            width: 350px;
-            display: flex;
-            align-items: center;
-            padding: 25px;
-            perspective: 100px;
-            object-fit: cover;
-        }
-        img {
+        /* @media(min-aspect-ratio: 16/9){
+          .bgvdo{
             width: 100%;
-            transition: transform 1s;
-            height: 200px;
-            width: 300px;
-        }
-        .slide img{
-          box-shadow: 0 0 25px 1px rgba(0, 255, 255, 0.7);
-        }
-        img:hover{
-            transform: translateZ(20px);
-            animation-delay: 10s;
-            box-shadow: none;
-        }
-        .MySideBar {
-          width: 240px !important;
-        }
-        .a{
-          -webkit-animation-duration:2s;animation-duration:2s;
-          -webkit-animation-duration:calc(var(--animate-duration)*2);
-          animation-duration:calc(var(--animate-duration)*2);
-          -webkit-animation-name:hinge;
-          animation-name:hinge;
-          -webkit-transform-origin:top left;
-          transform-origin:top left
-        }
-        .slider::before,
-        .slider::after {
-            background: linear-gradient(to right, #192734 0%, rgba(255,255,255,0) 100%);
-            content: '';
             height: 100%;
-            position: absolute;
-            width: 20%;
-            z-index: 2;
+          }
+        } */
+        .nav-link{
+            color: aliceblue !important;
         }
-        .slider::before{
-            left: 0;
-            top: 0;
+        .text-body-secondary{
+            color: aliceblue !important;
         }
-        .slider::after{
-            right: 0;
-            top: 0;
-            transform: rotateZ(180deg);
+        h5{
+            color: aliceblue;
+        }
+        .aa{
+          width: 1200px;
+          margin-top: 70px;
         }
     </style>
 </head>
@@ -129,7 +56,7 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <a class="navbar-brand d-grid col-3 mx-auto animate__animated animate__fadeInLeft" href="#"><div id="hang">Travell Memory Web</div></a>
+          <a class="navbar-brand d-grid col-3 mx-auto animate__animated animate__fadeInLeft " href="#"><div id="hang">Travell Memory Web</div></a>
           <div class="offcanvas offcanvas-start text-bg-dark MySideBar" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
             <div class="offcanvas-header">
               <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
@@ -181,85 +108,134 @@
           </div>          
           <!-- <div><a class="navbar-brand" href="#">Travell Memory Web</a></div> -->
         </div>
-      </nav>
+    </nav>
+
+      <video src="../imgvdos/bgvdo6.mp4" type="video/mp4" class="bgvdo" autoplay loop muted></video>
       <div class="container-fluid">
         <br><br><br><br><br><br>
         <div class="d-grid col-3 mx-auto">
-          <a class="btn btn-primary animate__animated animate__fadeInRight" type="button" href="#">Explore</a>
+          <a class="btn btn-primary animate__animated animate__fadeInRight button-85" type="button" href="../yearpages/firstpage.html">Explore</a>
         </div>
       </div>
       <div class="container-fluid">
         
       </div>
 
-
-
-      <div class="slider animate__animated animate__fadeInUp">
+    <div class="slider animate__animated animate__fadeInUp">
         <div class="slide-track">
             <div class="slide">
-                <img src="../bgimg.jpg">
+                <img class="imga" src="../imgvdos/bgimg.jpg">
             </div>
             <div class="slide">
-                <img src="../bgimg2.jpg">
+                <img class="imga" src="../imgvdos/bgimg2.jpg">
             </div>
             <div class="slide">
-                <img src="../bgimg3.jpg">
+                <img class="imga" src="../imgvdos/bgimg3.jpg">
             </div>
             <div class="slide">
-                <img src="../bgimg4.jpg">
+                <img class="imga" src="../imgvdos/bgimg4.jpg">
             </div>
             <div class="slide">
-              <img src="../bgimg4.jpg">
+              <img class="imga" src="../imgvdos/bgimg4.jpg">
             </div>
             <div class="slide">
-                <img src="../bgimg5.jpg">
+                <img class="imga" src="../imgvdos/bgimg5.jpg">
             </div>
             <div class="slide">
-                <img src="../bgimg6.jpg">
+                <img class="imga" src="../imgvdos/bgimg6.jpg">
             </div>
             <div class="slide">
-                <img src="../bgimg7.jpg">
+                <img class="imga" src="../imgvdos/bgimg7.jpg">
             </div>
             <div class="slide">
-                <img src="../bgimg8.jpg">
+                <img class="imga" src="../imgvdos/bgimg8.jpg">
             </div>
             <div class="slide">
-                <img src="../bgimg9.jpg">
+                <img class="imga" src="../imgvdos/bgimg9.jpg">
             </div>
 
 
             <div class="slide">
-                <img src="../bgimg.jpg">
+                <img class="imga" src="../imgvdos/bgimg.jpg">
             </div>
             <div class="slide">
-                <img src="../bgimg2.jpg">
+                <img class="imga" src="../imgvdos/bgimg2.jpg">
             </div>
             <div class="slide">
-                <img src="../bgimg3.jpg">
+                <img class="imga" src="../imgvdos/bgimg3.jpg">
             </div>
             <div class="slide">
-                <img src="../bgimg4.jpg">
+                <img class="imga" src="../imgvdos/bgimg4.jpg">
             </div>
             <div class="slide">
-              <img src="../bgimg4.jpg">
+              <img class="imga" src="../imgvdos/bgimg4.jpg">
             </div>
             <div class="slide">
-                <img src="../bgimg5.jpg">
+              <img class="imga" src="../imgvdos/bgimg5.jpg">
             </div>
             <div class="slide">
-                <img src="../bgimg6.jpg">
+                <img class="imga" src="../imgvdos/bgimg6.jpg">
             </div>
             <div class="slide">
-                <img src="../bgimg7.jpg">
+                <img class="imga" src="../imgvdos/bgimg7.jpg">
             </div>
             <div class="slide">
-                <img src="../bgimg8.jpg">
+                <img class="imga" src="../imgvdos/bgimg8.jpg">
             </div>
             <div class="slide">
-                <img src="../bgimg9.jpg">
+                <img class="imga" src="../imgvdos/bgimg9.jpg">
             </div>
         </div>
     </div>
+
+    <!-- footer start -->
+    <section class="aa">
+      <div class="container">
+        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+          <div class="col mb-3">
+            <!-- <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+              <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+            </a> -->
+            <p class="text-body-secondary">© 2024</p>
+          </div>
+      
+          <!-- <div class="col mb-3">
+      
+          </div> -->
+      
+          <div class="col mb-3">
+            <!-- <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul> -->
+          </div>
+      
+          <div class="col mb-3">
+            <!-- <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul> -->
+          </div>
+      
+          <div class="col mb-3">
+            <ul class="nav col md-4 justify-content-end list-unstyled d-flex">
+              <li class="ms-3"><a class="text-body-secondary" href="#"><img src="../imgvdos/png/bxl-linkedin.png" alt="linkedin img" width="30px"></a></li>
+              <li class="ms-3"><a class="text-body-secondary" href="#"><img src="../imgvdos/png/bxl-instagram-alt.png" alt="instragram img" width="30px"></a></li>
+              <li class="ms-3"><a class="text-body-secondary" href="#"><img src="../imgvdos/png/bxl-twitter.png" alt="facebook img" width="30px"></a></li>
+            </ul>
+          </div>
+        </footer>
+      </div>
+    </section>
+    <!--footer end-->
 
     <script>
       document.addEventListener('touchstart', function(event) {
@@ -271,6 +247,7 @@
   
         // Add the 'touched' class to the currently touched element
         var touchedElement = event.target;
+        console.log(touchedElement)
         touchedElement.classList.add('a');
       });
       var d=document.getElementById("hang");
