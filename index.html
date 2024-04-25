@@ -36,7 +36,7 @@
         color: white;
         }
         .aa{
-          width: 90%;
+          width: 100%;
         }
         @media (max-width: 991px){
           .myselect{
@@ -65,7 +65,8 @@
             margin-top: 90px;
           }
           .aa{
-            margin-top: 20px;
+            width: 90%;
+            margin-left: 20px;
           }
         }
     </style>
@@ -501,7 +502,7 @@ let Places =[
           e.preventDefault();
           let keyword = document.getElementById("searchbar").value;
           searchedplaces =""
-          let bb= Places.filter((place) => place.country_name.toLowerCase().includes(keyword) || place.name.toLowerCase().includes(keyword))
+          let bb= Places.filter((place) => place.country_name.toLowerCase().includes(keyword.toLowerCase()) || place.name.toLowerCase().includes(keyword.toLowerCase()))
           console.log(bb)
           if(bb.length>0){
             bb.map((places)=>{
